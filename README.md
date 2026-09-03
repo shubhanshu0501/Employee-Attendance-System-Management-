@@ -8,7 +8,7 @@ https://empattendancemanagement.netlify.app
 
 ## 📂 GitHub Repository
 
-https://github.com/shubhanshu0501/Employee-Attendance-System-Management-.git
+https://github.com/shubhanshu0501/Employee-Attendance-System-Management-
 
 ---
 
