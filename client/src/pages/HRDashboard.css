@@ -1,0 +1,225 @@
+/* =========================================
+   HR EXECUTIVE DASHBOARD APP SHELL STYLES
+========================================= */
+
+.hr-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.hr-kpi-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-theme), transform 0.15s ease;
+    box-sizing: border-box;
+}
+
+.hr-kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-focus);
+}
+
+.hr-kpi-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hr-kpi-card label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.hr-kpi-card h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.hr-kpi-card span {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.hr-icon-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hr-icon-badge.indigo {
+    background: var(--brand-light);
+    color: var(--brand-primary);
+}
+
+.hr-icon-badge.emerald {
+    background: var(--accent-emerald-light);
+    color: var(--accent-emerald-text);
+}
+
+.hr-icon-badge.amber {
+    background: var(--accent-amber-light);
+    color: var(--accent-amber-text);
+}
+
+/* FILTERS BAR */
+.filter-toolbar {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 16px 20px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    transition: var(--transition-theme);
+    box-sizing: border-box;
+}
+
+.filter-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-input-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.filter-input-group input {
+    height: 40px;
+    padding: 0 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--input-bg);
+    color: var(--text-primary);
+    font-size: 13px;
+    outline: none;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+}
+
+.filter-input-group input:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+.btn-clear-filter {
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-clear-filter:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* ACTION BUTTONS */
+.action-buttons-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-approve, .btn-reject {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    border-radius: var(--radius-md);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s ease;
+}
+
+.btn-approve {
+    background: var(--accent-emerald);
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+}
+
+.btn-approve:hover:not(:disabled) {
+    background: var(--accent-emerald-text);
+    transform: translateY(-1px);
+}
+
+.btn-reject {
+    background: var(--accent-rose);
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(244, 63, 94, 0.2);
+}
+
+.btn-reject:hover:not(:disabled) {
+    background: var(--accent-rose-text);
+    transform: translateY(-1px);
+}
+
+.custom-table td.reason-cell {
+    max-width: 240px;
+    min-width: 140px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.btn-approve:disabled, .btn-reject:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 1024px) {
+    .hr-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+    .filter-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .hr-kpi-grid {
+        gap: 12px;
+    }
+    .hr-kpi-card {
+        padding: 16px;
+    }
+    .filter-toolbar {
+        padding: 14px;
+        gap: 12px;
+    }
+    .filter-input-group input, .btn-clear-filter {
+        width: 100%;
+    }
+    .action-buttons-group {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+}

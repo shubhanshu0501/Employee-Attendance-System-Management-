@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   CENTRALIZED THEME SYSTEM (LIGHT & DARK)
+========================================= */
+
+:root {
+  /* Enterprise Light SaaS Palette */
+  --bg-primary: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-secondary: #F1F5F9;
+  --bg-sidebar: #FFFFFF;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+  --text-inverse: #FFFFFF;
+
+  --border-color: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --border-focus: #6366F1;
+
+  --input-bg: #FFFFFF;
+  --table-header-bg: #F1F5F9;
+  --table-hover-bg: #F8FAFC;
+
+  --brand-primary: #4F46E5;
+  --brand-secondary: #7C3AED;
+  --brand-hover: #4338CA;
+  --brand-light: #EEF2FF;
+  --brand-border: #C7D2FE;
+  --brand-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  --brand-header-gradient: linear-gradient(135deg, #312E81 0%, #4F46E5 50%, #6366F1 100%);
+
+  --accent-cyan: #06B6D4;
+  --accent-cyan-light: #ECFEFF;
+  --accent-cyan-text: #0891B2;
+
+  --accent-emerald: #10B981;
+  --accent-emerald-light: #ECFDF5;
+  --accent-emerald-text: #047857;
+  
+  --accent-rose: #F43F5E;
+  --accent-rose-light: #FFF1F2;
+  --accent-rose-text: #BE123C;
+  
+  --accent-amber: #F59E0B;
+  --accent-amber-light: #FFFBEB;
+  --accent-amber-text: #B45309;
+
+  --sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 6px 0 rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 14px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 10px -4px rgba(15, 23, 42, 0.04);
+
+  --sidebar-width: 250px;
+  --navbar-height: 68px;
+
+  --transition-theme: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+/* DARK THEME OVERRIDES */
+[data-theme="dark"], body.dark, html.dark {
+  --bg-primary: #0B1120;
+  --bg-surface: #111827;
+  --bg-secondary: #1F2937;
+  --bg-sidebar: #0B1120;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
+
+  --border-color: #273449;
+  --border-subtle: #1F2937;
+
+  --input-bg: #1F2937;
+  --table-header-bg: #1F2937;
+  --table-hover-bg: #1E293B;
+
+  --brand-light: rgba(79, 70, 229, 0.2);
+  --brand-border: rgba(79, 70, 229, 0.4);
+
+  --accent-cyan-light: rgba(6, 182, 212, 0.18);
+  --accent-cyan-text: #38BDF8;
+
+  --accent-emerald-light: rgba(16, 185, 129, 0.18);
+  --accent-emerald-text: #34D399;
+
+  --accent-rose-light: rgba(244, 63, 94, 0.18);
+  --accent-rose-text: #FB7185;
+
+  --accent-amber-light: rgba(245, 158, 11, 0.18);
+  --accent-amber-text: #FBBF24;
+
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 14px -2px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.7);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: var(--transition-theme);
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  transition: var(--transition-theme);
+}
+
+/* SECTION SCROLL MARGIN OFFSET FIX */
+section, [id] {
+  scroll-margin-top: 90px;
+}
+
+/* Base Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: var(--transition-theme);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--brand-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--brand-secondary);
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+}
